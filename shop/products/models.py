@@ -1,4 +1,4 @@
-from shop import db
+from shop import db, app
 from datetime import datetime
 
 class Addproduct(db.Model):
@@ -37,4 +37,6 @@ class Category(db.Model):
     id=db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False, unique=True)
 
-db.create_all()
+@app.before_first_request
+def create_table():
+    db.create_all()

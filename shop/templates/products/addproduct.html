@@ -18,7 +18,7 @@
             <label for="brand">Add a brand</label>
             <select name="brand" id="brand" class="form-control" required>
                 <option value="">Select A Brand</option>
-                {% for brand in brand %}
+                {% for brand in brands %}
             <option value="brand.id">{{brand.name}}</option> 
                 {% endfor %}
 
