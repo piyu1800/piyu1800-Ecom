@@ -1,5 +1,6 @@
 from shop import db
 from shop import app
+from datetime import datetime
 
 
 
@@ -15,9 +16,7 @@ class User(db.Model):
     def __repr__(self) :
         return '<User %r>' % self.username
 
-@app.before_first_request
-def create_table():
-    db.create_all()
+db.create_all()
 
 
       
